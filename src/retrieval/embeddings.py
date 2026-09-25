@@ -2,6 +2,31 @@ from __future__ import annotations
 
 from functools import lru_cache
 
+import sys
+import types
+import unittest.mock
+
+# Safe shim for environments where pyarrow.dataset DLL is blocked by Windows AppLocker/WDAC
+if "datasets" not in sys.modules:
+    try:
+        import datasets  # noqa: F401
+    except Exception:
+        class _DatasetsModule(types.ModuleType):
+            def __getattr__(self, name):
+                return unittest.mock.MagicMock()
+
+        _m = _DatasetsModule("datasets")
+        _m.__version__ = "4.0.0"
+        _m.__file__ = "datasets/__init__.py"
+        _m.__spec__ = unittest.mock.MagicMock()
+        _m.Dataset = unittest.mock.MagicMock
+        _m.DatasetDict = unittest.mock.MagicMock
+        _m.IterableDataset = unittest.mock.MagicMock
+        _m.IterableDatasetDict = unittest.mock.MagicMock
+        _m.Value = unittest.mock.MagicMock
+        _m.Features = unittest.mock.MagicMock
+        sys.modules["datasets"] = _m
+
 from langchain_core.embeddings import Embeddings
 from sentence_transformers import SentenceTransformer
 

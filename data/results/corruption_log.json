@@ -1,0 +1,61 @@
+{
+  "total_original_rows": 24,
+  "total_corrupted_rows": 22,
+  "corruptions": [
+    {
+      "corruption_type": "drop_latest_records",
+      "count": 4,
+      "affected_paper_ids": [
+        "10.1145/3637528.3671812",
+        "10.1145/3637528.3671808",
+        "10.1145/3637528.3671804",
+        "10.1145/3637528.3671807"
+      ],
+      "description": "Dropped 4 most recent papers."
+    },
+    {
+      "corruption_type": "blank_summary",
+      "count": 2,
+      "affected_paper_ids": [
+        "10.1145/3637528.3671824",
+        "10.1145/3637528.3671802"
+      ],
+      "description": "Erased summary text to simulate crawler extract failure."
+    },
+    {
+      "corruption_type": "inject_noise",
+      "count": 2,
+      "affected_paper_ids": [
+        "10.1145/3637528.3671823",
+        "10.1145/3637528.3671822"
+      ],
+      "description": "Injected synthetic noise and random tokens into summary."
+    },
+    {
+      "corruption_type": "truncate_title",
+      "count": 1,
+      "affected_paper_ids": [
+        "10.1145/3637528.3671821"
+      ],
+      "description": "Truncated paper title to '< 8 characters'."
+    },
+    {
+      "corruption_type": "stale_date",
+      "count": 2,
+      "affected_paper_ids": [
+        "10.1145/3637528.3671820",
+        "10.1145/3637528.3671810"
+      ],
+      "description": "Shifted publication date back 365 days to violate Freshness SLA."
+    },
+    {
+      "corruption_type": "duplicate_rows",
+      "count": 2,
+      "affected_paper_ids": [
+        "10.1145/3637528.3671824",
+        "10.1145/3637528.3671802"
+      ],
+      "description": "Duplicated records to violate uniqueness constraint."
+    }
+  ]
+}
