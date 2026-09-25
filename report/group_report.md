@@ -18,9 +18,9 @@
 | STT | Họ và tên | MSSV | Vai trò chính | Module / deliverable sở hữu |
 | --: | :--- | :---: | :--- | :--- |
 | 1 | Nguyễn Đỗ Chiến Thắng | 2A202602442 | Trưởng nhóm / Pipeline Lead | `src/core/`, `src/pipelines/` (`phase1.py`, `corruption_flow.py`), `script/` entrypoints, orchestration & Git management |
-| 2 | Dương Gia Khang | 2A202601892 | Data Foundation Owner | `src/ingestion/` (`crossref.py`, `cleaning.py`, `corruption.py`), Raw data preservation & Idempotent Repair flow |
-| 3 | Đặng Hữu Tâm | 02940 | RAG Specialist | `src/retrieval/` (`index.py`, `embeddings.py`, `llm.py`, `agent.py`), ChromaDB 3 collections (`papers-baseline`, `papers-corrupted`, `papers-repaired`), smoke tests |
-| 4 | Nguyễn Hoàng Việt | 2A202601404 | Observability & Evaluation Lead | `src/observability/` (`quality.py` GX 1.x, `reporting.py`), `src/evaluation/` (`testset.py`, `metrics.py`), Freshness SLA, 3-state reporting |
+| 2 | Dương Quang Khang | 2A202602624 | Data Foundation Owner | `src/ingestion/` (`crossref.py`, `cleaning.py`, `corruption.py`), Raw data preservation & Idempotent Repair flow |
+| 3 | Đặng Hữu Tâm | 2A202602940 | RAG Specialist | `src/retrieval/` (`index.py`, `embeddings.py`, `llm.py`, `agent.py`), ChromaDB 3 collections (`papers-baseline`, `papers-corrupted`, `papers-repaired`), smoke tests |
+| 4 | Nguyễn Hoàng Việt | 2A202602602 | Observability & Evaluation Lead | `src/observability/` (`quality.py` GX 1.x, `reporting.py`), `src/evaluation/` (`testset.py`, `metrics.py`), Freshness SLA, 3-state reporting |
 
 ---
 

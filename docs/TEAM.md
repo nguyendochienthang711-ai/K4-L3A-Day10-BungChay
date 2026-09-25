@@ -11,9 +11,9 @@
 | STT | Họ và tên | MSSV | Email | Vai trò & Phân công công việc | Báo cáo cá nhân |
 |---:|---|---|---|---|---|
 | 1 | Nguyễn Đỗ Chiến Thắng | 2A202602442 | nguyendochienthang711@gmail.com | Trưởng nhóm / Pipeline Lead (`core/`, `phase1.py`, `corruption_flow.py`) | `report/2A202602442_NguyenDoChienThang.md` |
-| 2 | Dương Gia Khang | 2A202601892 | khangnguyhiemlslsls@gmail.com | Data Foundation Owner (`crossref.py`, `cleaning.py`, raw data & idempotent repair) | `report/2A202601892_DuongGiaKhang.md` |
-| 3 | Đặng Hữu Tâm | 02940 | danghuutam@gmail.com | RAG Specialist (`retrieval/index.py`, `embeddings.py`, ChromaDB 3 collections) | `report/02940_DangHuuTam.md` |
-| 4 | Nguyễn Hoàng Việt | 2A202601404 | vietnguyenhoang004@gmail.com | Observability & Evaluation Lead (`quality.py` GX 1.x, `testset.py`, reporting) | `report/2A202601404_NguyenHoangViet.md` |
+| 2 | Dương Quang Khang | 2A202602624 | khangnguyhiemlslsls@gmail.com | Data Foundation Owner (`crossref.py`, `cleaning.py`, raw data & idempotent repair) | `report/2A202602624_DuongQuangKhang.md` |
+| 3 | Đặng Hữu Tâm | 2A202602940 | danghuutam@gmail.com | RAG Specialist (`retrieval/index.py`, `embeddings.py`, ChromaDB 3 collections) | `report/2A202602940_DangHuuTam.md` |
+| 4 | Nguyễn Hoàng Việt | 2A202602602 | vietnguyenhoang004@gmail.com | Observability & Evaluation Lead (`quality.py` GX 1.x, `testset.py`, reporting) | `report/2A202602602_NguyenHoangViet.md` |
 
 ---
 
@@ -32,7 +32,7 @@
   - Nắm vững kiến trúc Pipeline hướng dữ liệu (Data-Centric Pipeline) có tính Idempotent cao.
   - Hiểu rõ hiện tượng Silent Failure trong các hệ thống AI/RAG: dữ liệu bẩn làm suy thoái mô hình âm thầm nếu không có lớp Observability Gate bảo vệ.
 
-### ## DuongGiaKhang-2A202601892
+### ## DuongQuangKhang-2A202602624
 - **Vai trò:** Data Foundation Owner (`src/ingestion/`).
 - **Công việc chi tiết đã hoàn thành:**
   - Xây dựng module nạp dữ liệu thô `src/ingestion/crossref.py` hỗ trợ Dual-mode: tải trực tiếp từ Crossref REST API với cơ chế retry/exponential backoff và tự động chuyển sang local snapshot (`data/raw/crossref_records.json`) khi mất kết nối mạng.
@@ -43,7 +43,7 @@
   - Hiểu sâu sắc về Data Lineage (truy vết nguồn gốc dữ liệu) và nguyên tắc bất biến của Raw Data Layer.
   - Nắm vững phương pháp thiết kế hàm biến đổi có tính Idempotent để đảm bảo hệ thống có thể phục hồi dữ liệu nhất quán bất kỳ lúc nào.
 
-### ## DangHuuTam-02940
+### ## DangHuuTam-2A202602940
 - **Vai trò:** RAG Specialist (`src/retrieval/`).
 - **Công việc chi tiết đã hoàn thành:**
   - Khởi tạo và quản lý 3 collection ChromaDB độc lập (`papers-baseline`, `papers-corrupted`, `papers-repaired`) nhằm cô lập hoàn toàn không gian vector, ngăn ngừa rò rỉ dữ liệu giữa các pha thử nghiệm.
@@ -56,7 +56,7 @@
   - Nắm vững cách xây dựng hệ thống Hybrid Retrieval kết hợp Vector Similarity Search với exact metadata filtering.
   - Hiểu rõ sự phụ thuộc trực tiếp của biểu diễn không gian vector vào chất lượng làm sạch của văn bản đầu vào.
 
-### ## NguyenHoangViet-2A202601404
+### ## NguyenHoangViet-2A202602602
 - **Vai trò:** Observability & Evaluation Lead (`src/observability/`, `src/evaluation/`).
 - **Công việc chi tiết đã hoàn thành:**
   - Thiết lập Data Quality Gate trong `src/observability/quality.py` theo đúng chuẩn hiện đại **Great Expectations 1.x** (sử dụng `gx.get_context(mode="ephemeral")`, `gx.ExpectationSuite`, `gx.ValidationDefinition`) với 4 expectations cốt lõi: số lượng dòng, tính không null của `paper_id`, tính duy nhất (uniqueness), và độ dài tối thiểu của `summary` (>= 30 ký tự).
@@ -64,6 +64,7 @@
   - Xây dựng bộ testset kiểm chuẩn cố định gồm 10 câu hỏi đa dạng trong `src/evaluation/testset.py`, bao quát 4 nhóm nghiệp vụ: `summary`, `authors`, `date`, `categories` kèm cặp `ground_truth_doc_ids` chuẩn xác.
   - Lập trình module đánh giá `src/evaluation/metrics.py` đo lường định lượng: Retrieval Hit Rate, Mean Token F1, LLM Judge Accuracy và Judge Score trên cả 3 trạng thái.
   - Tự động sinh báo cáo đối chiếu định lượng 3 trạng thái tại `data/reports/corruption_report.md` và `data/reports/phase1_report.md`.
+  - Xây dựng giao diện trực quan **Interactive Observability Dashboard (Bonus B1: +5 điểm)** bằng Streamlit `dashboard.py` và file HTML độc lập `data/reports/dashboard.html`.
 - **Điều học được / Đóng góp chính:**
   - Làm chủ cú pháp mới của Great Expectations 1.x, tránh các lỗi deprecated của GX 0.x.
   - Hiểu cách thiết lập các chốt kiểm soát tự động để phát hiện suy thoái dữ liệu trước khi ảnh hưởng đến người dùng cuối.
