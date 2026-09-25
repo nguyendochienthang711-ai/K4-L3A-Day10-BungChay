@@ -12,7 +12,7 @@
 |---:|---|---|---|---|---|
 | 1 | | | | Trưởng nhóm / Pipeline Integrator (`core/`, `phase1.py`, `corruption_flow.py`) | `report/<MSSV1>_HoTen.md` |
 | 2 | | | | Data Foundation & Recovery (`crossref.py`, `cleaning.py`, raw data) | `report/<MSSV2>_HoTen.md` |
-| 3 | Đặng Hữu Tâm | 02940 | | RAG & Vector Index (`retrieval/index.py`, `embeddings.py`, ChromaDB) | `report/02940_DangHuuTam.md` |
+| 3 | Đặng Hữu Tâm | 2A202602940 | | RAG & Vector Index (`retrieval/index.py`, `embeddings.py`, ChromaDB) | `report/02940_DangHuuTam.md` |
 | 4 | Nguyễn Hoàng Việt | 2A202602602 | vietnguyenhoang004@gmail.com | Observability & Evaluation (`quality.py` GX 1.x, `testset.py`, reporting) | `report/2A202602602_NguyenHoangViet.md` |
 
 *(Nếu nhóm có 3 hoặc 5-6 thành viên, xem bảng phân công chi tiết theo vai trò trong file `CHECKPOINTS.md`)*.
