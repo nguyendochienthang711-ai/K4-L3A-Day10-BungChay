@@ -4,7 +4,7 @@
 
 | Thông tin         | Nội dung                                                                        |
 | ------------------ | -------------------------------------------------------------------------------- |
-| Họ và tên       | Dương Quang Khang                                                              |
+| Họ và tên       | Dương Đạt Khang                                                              |
 | MSSV               | 2A202602624                                                                      |
 | Khóa/Lớp         | Khóa 4 - L3A - Day 10                                                           |
 | Tên nhóm         | Group 19 - Bùng Cháy                                                           |
