@@ -5,7 +5,7 @@
 | Thông tin         | Nội dung                                                           |
 | ------------------ | ------------------------------------------------------------------- |
 | Họ và tên       | Đặng Hữu Tâm                                                      |
-| MSSV               | 02940                                                               |
+| MSSV               | 2A202602940                                                               |
 | Khóa/Lớp         | K4A                                                                  |
 | Tên nhóm         | BungChay                                                            |
 | Vai trò chính    | RAG & Vector Index Specialist                                       |
