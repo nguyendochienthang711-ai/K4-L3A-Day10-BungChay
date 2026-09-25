@@ -11,7 +11,7 @@
 | STT | Họ và tên | MSSV | Email | Vai trò & Phân công công việc | Báo cáo cá nhân |
 |---:|---|---|---|---|---|
 | 1 | Nguyễn Đỗ Chiến Thắng | 2A202602442 | nguyendochienthang711@gmail.com | Trưởng nhóm / Pipeline Lead (`core/`, `phase1.py`, `corruption_flow.py`) | `report/2A202602442_NguyenDoChienThang.md` |
-| 2 | Dương Quang Khang | 2A202602624 | khangnguyhiemlslsls@gmail.com | Data Foundation Owner (`crossref.py`, `cleaning.py`, raw data & idempotent repair) | `report/2A202602624_DuongQuangKhang.md` |
+| 2 | Dương Đạt Khang | 2A202602624 | khangnguyhiemlslsls@gmail.com | Data Foundation Owner (`crossref.py`, `cleaning.py`, raw data & idempotent repair) | `report/2A202602624_DuongDatKhang.md` |
 | 3 | Đặng Hữu Tâm | 2A202602940 | danghuutam@gmail.com | RAG Specialist (`retrieval/index.py`, `embeddings.py`, ChromaDB 3 collections) | `report/2A202602940_DangHuuTam.md` |
 | 4 | Nguyễn Hoàng Việt | 2A202602602 | vietnguyenhoang004@gmail.com | Observability & Evaluation Lead (`quality.py` GX 1.x, `testset.py`, reporting) | `report/2A202602602_NguyenHoangViet.md` |
 
@@ -32,7 +32,7 @@
   - Nắm vững kiến trúc Pipeline hướng dữ liệu (Data-Centric Pipeline) có tính Idempotent cao.
   - Hiểu rõ hiện tượng Silent Failure trong các hệ thống AI/RAG: dữ liệu bẩn làm suy thoái mô hình âm thầm nếu không có lớp Observability Gate bảo vệ.
 
-### ## DuongQuangKhang-2A202602624
+### ## DuongDatKhang-2A202602624
 - **Vai trò:** Data Foundation Owner (`src/ingestion/`).
 - **Công việc chi tiết đã hoàn thành:**
   - Xây dựng module nạp dữ liệu thô `src/ingestion/crossref.py` hỗ trợ Dual-mode: tải trực tiếp từ Crossref REST API với cơ chế retry/exponential backoff và tự động chuyển sang local snapshot (`data/raw/crossref_records.json`) khi mất kết nối mạng.

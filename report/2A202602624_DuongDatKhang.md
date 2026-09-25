@@ -8,7 +8,7 @@
 
 | Thông tin | Nội dung |
 | :--- | :--- |
-| **Họ và tên** | **Dương Quang Khang** |
+| **Họ và tên** | **Dương Đạt Khang** |
 | **MSSV** | **2A202602624** |
 | **Khóa / Lớp** | K4A - Level 3 (Day 10) |
 | **Tên nhóm** | BungChay (`K4A-L3-DAY10`) |
@@ -179,5 +179,5 @@ Tôi sẽ xây dựng một module **Schema Evolution & Anomaly Detector**: tự
 - [x] Báo cáo không chứa `.env`, API key, token hoặc secret.
 - [x] Báo cáo này không phải bản sao nguyên văn của báo cáo nhóm hoặc báo cáo thành viên khác.
 
-**Họ và tên:** Dương Quang Khang  
+**Họ và tên:** Dương Đạt Khang  
 **Ngày xác nhận:** 2026-09-25
