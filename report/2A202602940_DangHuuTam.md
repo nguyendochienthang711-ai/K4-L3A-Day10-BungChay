@@ -6,7 +6,7 @@
 | ------------------ | ------------------------------------------------------------------- |
 | Họ và tên       | Đặng Hữu Tâm                                                      |
 | MSSV               | 2A202602940                                                               |
-| Khóa/Lớp         | K4A                                                                  |
+| Khóa/Lớp         | K4A (Day 10)                                                                  |
 | Tên nhóm         | BungChay                                                            |
 | Vai trò chính    | RAG & Vector Index Specialist                                       |
 | Repository         | https://github.com/nguyendochienthang711-ai/K4-L3A-Day10-BungChay |
