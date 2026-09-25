@@ -10,8 +10,9 @@
 
 | Thông tin | Nội dung |
 | :--- | :--- |
-| **Họ và tên** | [Điền Họ và Tên của bạn] |
-| **MSSV** | [Điền MSSV của bạn] |
+| **Họ và tên** | Nguyễn Hoàng Việt |
+| **MSSV** | 2A202602602 |
+| **Email** | vietnguyenhoang004@gmail.com |
 | **Khóa / Lớp** | K4A - Level 3 (Day 10) |
 | **Tên nhóm** | BungChay |
 | **Vai trò chính** | **Observability & Evaluation Lead** |

@@ -13,7 +13,7 @@
 | 1 | | | | Trưởng nhóm / Pipeline Integrator (`core/`, `phase1.py`, `corruption_flow.py`) | `report/<MSSV1>_HoTen.md` |
 | 2 | | | | Data Foundation & Recovery (`crossref.py`, `cleaning.py`, raw data) | `report/<MSSV2>_HoTen.md` |
 | 3 | Đặng Hữu Tâm | 02940 | | RAG & Vector Index (`retrieval/index.py`, `embeddings.py`, ChromaDB) | `report/02940_DangHuuTam.md` |
-| 4 | | | | Observability & Evaluation (`quality.py` GX 1.x, `testset.py`, reporting) | `report/<MSSV4>_HoTen.md` |
+| 4 | Nguyễn Hoàng Việt | 2A202602602 | vietnguyenhoang004@gmail.com | Observability & Evaluation (`quality.py` GX 1.x, `testset.py`, reporting) | `report/2A202602602_NguyenHoangViet.md` |
 
 *(Nếu nhóm có 3 hoặc 5-6 thành viên, xem bảng phân công chi tiết theo vai trò trong file `CHECKPOINTS.md`)*.
 
@@ -51,11 +51,15 @@
 - **Điều học được / Đóng góp chính:**
   - Cách cô lập các không gian vector để so sánh khách quan giữa dữ liệu sạch và dữ liệu bị lỗi; semantic search đơn thuần dễ nhầm giữa các tài liệu gần trùng, nên exact lookup theo ID/title là lớp bảo vệ quan trọng.
 
-### ## HoVaTen4-MSSV4
-- **Vai trò:** Phụ trách Data Observability & Benchmark Evaluation.
+### ## NguyenHoangViet-2A202602602
+- **Vai trò:** Phụ trách Data Observability & Benchmark Evaluation (`src/observability/`, `src/evaluation/`).
 - **Công việc chi tiết đã hoàn thành:**
-  - Thiết lập Quality Gate theo chuẩn mới **Great Expectations 1.x** và giám sát Freshness SLA trong `src/observability/quality.py`.
-  - Xây dựng bộ câu hỏi đánh giá chuẩn trong `src/evaluation/testset.py`.
-  - Đo lường và xuất bảng đối chiếu 3 trạng thái vào `data/reports/corruption_report.md`.
+  - Thiết lập Data Quality Gate chuẩn hóa theo **Great Expectations 1.x** (`mode="ephemeral"`) với 4 Expectations cốt lõi trong `src/observability/quality.py`, kiểm định dữ liệu sạch đạt `PASS`, bắt lỗi chính xác khi tiêm dữ liệu hỏng (`FAIL`).
+  - Triển khai cơ chế giám sát độ tươi tri thức **Freshness SLA** (`age_days > 180`), ghi nhận tỷ lệ bài báo cũ 4.2% $\le$ 25% (PASS), xuất `data/quality/freshness_report.json`.
+  - Xây dựng bộ đề thi đánh giá RAG chuẩn hóa gồm 10 câu hỏi bao phủ 4 nhóm nghiệp vụ (`summary`, `authors`, `date`, `categories`) trong `src/evaluation/testset.py`, xuất `data/eval/test_set.json`.
+  - Tự động hóa xuất báo cáo Markdown Pha 1 (`phase1_report.md`) và Pha 2 (`corruption_report.md`) đối chiếu 3 trạng thái rõ ràng (Baseline vs Corrupted vs Repaired) trong `src/observability/reporting.py`.
+  - Đo lường và chứng minh hiện tượng **Silent Failure**: Retrieval Hit Rate sụt giảm từ 100% xuống 70% khi dữ liệu bị tiêm lỗi, và phục hồi lại 100% sau Idempotent Repair.
+  - Xây dựng giao diện trực quan **Interactive Observability Dashboard (Bonus B1: +5 điểm)** qua cả 2 hình thức: ứng dụng Streamlit `dashboard.py` (5 tabs phân tích) và trang Web HTML độc lập `data/reports/dashboard.html`.
+  - Khắc phục triệt để lỗi xung đột môi trường (PyTorch 2.2.2 / NumPy 1.26.4 / Transformers 4.44.2) trên macOS và lỗi fallback judge trong `metrics.py`.
 - **Điều học được / Đóng góp chính:**
-  - Cách thiết lập hệ thống cảnh báo sớm chặn đứng hiện tượng Silent Failure trước khi dữ liệu vào serving layer.
+  - Hiểu sâu sắc cách thức Data Quality Gate ngăn chặn dữ liệu bẩn thẩm thấu vào Vector DB; làm chủ kiến trúc Ephemeral Context của GX 1.x và quy trình thiết lập chuẩn Ground Truth để đo lường định lượng chất lượng RAG Agent.
